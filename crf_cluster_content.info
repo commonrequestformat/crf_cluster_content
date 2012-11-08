@@ -4,7 +4,6 @@ core = 7.x
 package = CRF
 php = 5.2.4
 dependencies[] = views
-dependencies[] = workflow_views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
 features[views_view][] = cluster_content
