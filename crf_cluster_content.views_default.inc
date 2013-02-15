@@ -204,6 +204,24 @@ function crf_cluster_content_views_default_views() {
   $handler->display->display_options['filters']['field_cluster_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_cluster_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_cluster_tid']['vocabulary'] = 'clusters';
+  /* Filter criterion: Workbench Moderation: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['label'] = 'State';
+  $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+  $handler->display->display_options['filters']['state']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -233,6 +251,7 @@ function crf_cluster_content_views_default_views() {
     t('Published'),
     t('Request'),
     t('Cluster'),
+    t('State'),
     t('Page'),
   );
   $export['cluster_content'] = $view;
